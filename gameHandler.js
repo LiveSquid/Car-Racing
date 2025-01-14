@@ -15,10 +15,10 @@ gameOver.src = "assets/audio/gameOver_theme.mp3";
 const levelSpeed = {easy: 7, moderate: 10, difficult: 14};
 
 let keys = {
-    ArrowUp: false,
-    ArrowDown: false,
-    ArrowLeft: false,
-    ArrowRight: false
+    w: false,
+    s: false,
+    a: false,
+    d: false
 }
 let player = { speed: 7, score: 0 };
 level.addEventListener('click', (e)=> {
@@ -121,10 +121,10 @@ function gamePlay() {
         moveRoadLines();
         moveEnemyCars(carElement);
             
-        if(keys.ArrowUp && player.y > (road.top + 70)) player.y -= player.speed;
-        if(keys.ArrowDown && player.y < (road.bottom - 85)) player.y += player.speed;
-        if(keys.ArrowLeft && player.x > 0) player.x -= player.speed;
-        if(keys.ArrowRight && player.x < (road.width - 70)) player.x += player.speed;
+        if(keys.w && player.y > (road.top + 70)) player.y -= player.speed;
+        if(keys.s && player.y < (road.bottom - 85)) player.y += player.speed;
+        if(keys.a && player.x > 0) player.x -= player.speed;
+        if(keys.d && player.x < (road.width - 70)) player.x += player.speed;
 
         carElement.style.top = player.y + "px";
         carElement.style.left = player.x + "px";
